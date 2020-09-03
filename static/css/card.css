@@ -1,0 +1,75 @@
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 90% !important;
+  align-items: center !important;
+  background-color: lightgrey !important;
+  height: 100% !important;
+}
+.card-container {
+  background-color: white !important;
+  width: 70% !important;
+  height: 10% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 2% !important;
+}
+.post-image {
+  height: 5% !important;
+  width: 80% !important;
+  margin-top: -2% !important;
+}
+.card-body {
+  display: flex !important;
+  justify-content: center !important;
+}
+.card-head {
+  display: flex !important;
+  flex-direction: column;
+}
+.card-profile {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1% !important;
+}
+.card-profile-image {
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50% !important;
+}
+.card-profile-name {
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+}
+.uploader-name {
+  color: black;
+  font-style: bold !important;
+  font-size: large;
+  padding-left: 1% !important;
+}
+.time-before {
+  font-size: small;
+  margin-top: -3%;
+  padding-left: 1% !important;
+}
+.card-title {
+  text-align: center;
+}
+.card-footer {
+  text-align: center;
+}
+hr .line {
+  height: 2px;
+  border-width: 0;
+  color: gray;
+  background-color: gray;
+  margin-left: 1% !important;
+  margin-right: 1% !important;
+}
+.like-comment-share {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-around;
+}

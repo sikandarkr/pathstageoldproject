@@ -1,0 +1,79 @@
+.side-menu-left {
+  background-color: lightgrey !important;
+  position: fixed;
+  height: 100% !important;
+  width: 15% !important;
+}
+.side-menu-left-content {
+  background-color: lightgrey !important;
+}
+.content-list {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 20% !important;
+}
+.profile-image {
+  /* padding-left: 10% !important; */
+  height: 150px;
+  width: 150px;
+  margin-left: 10% !important;
+  border-radius: 50%;
+}
+.optionA {
+  background-color: white;
+  padding-left: 20% !important;
+  margin-left: 2% !important;
+  padding-top: 2% !important;
+  padding-bottom: 2% !important;
+  margin-right: 2% !important;
+  margin-top: 2% !important;
+}
+.option {
+  padding-left: 20% !important;
+  color: black !important;
+}
+.optionA:hover {
+  cursor: pointer;
+}
+.option:hover {
+  cursor: pointer;
+}
+.image-container {
+  display: flex;
+  flex-direction: column;
+}
+.add-profile-icon {
+  margin-top: -30px;
+  margin-left: 50% !important;
+  margin-right: 40% !important;
+}
+.plus-icon {
+  color: white !important;
+  background-color: teal;
+  border-radius: 50%;
+  padding: 10% !important;
+  font-size: large;
+}
+.plus-icon:hover {
+  cursor: pointer;
+}
+.dark-mode {
+  background-color: gray !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.right {
+  margin-top: 30% !important;
+  position: fixed;
+}
+.m-center {
+  margin-top: 5% !important;
+  background-color: teal;
+  display: flex;
+  align-items: center;
+}
+.post-display {
+  background-color: red !important;
+  width: 90% !important;
+}

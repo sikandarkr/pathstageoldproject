@@ -1,0 +1,63 @@
+.preview_modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 10 !important;
+  display: flex !important;
+  flex-direction: column;
+  width: 30% !important;
+}
+.header {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+  padding-top: 1% !important;
+}
+.modal-close {
+  margin-left: 10% !important;
+}
+hr.line {
+  border: 1px solid lightgray;
+  width: 100% !important;
+}
+.modal-close {
+  font-size: large;
+}
+.modal-close:hover {
+  cursor: pointer;
+}
+.upload-image {
+  width: 95% !important;
+  margin-left: 2.5% !important;
+  height: 200px !important;
+}
+.upload-btn {
+  margin: auto !important;
+  padding-bottom: 5px !important;
+  margin-bottom: 5px !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  padding-top: 5px !important;
+  background-color: teal;
+  color: white;
+  border-radius: 0.5rem !important;
+}
+.upload-btn:hover {
+  cursor: pointer;
+}
+.profile-file-chooser {
+  margin: auto;
+  margin-left: 35% !important;
+  padding-top: 15% !important;
+  padding-bottom: 15% !important;
+}
+.links {
+  color: black;
+}
+.links:hover {
+  color: black;
+}
