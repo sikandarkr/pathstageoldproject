@@ -20,10 +20,10 @@ class MyApp extends App {
 
     return (
       <Provider store={store}>
-        <Container>
-            <Navbar  {...this.props}/>
-            <Component pageContext={this.pageContext} {...pageProps} />
-        </Container>
+        {/* <MainLayout> */}
+            <Navbar   {...this.props}/>
+            <Component pageContext={this.pageContext} {...pageProps}/>
+        {/* </MainLayout> */}
       </Provider>
     );
   }

@@ -77,6 +77,7 @@ class MyDocument extends Document {
           <Main />
           <script dangerouslySetInnerHTML={{ __html: getUserScript(user) }} />
           <NextScript />
+          <script src="https://unpkg.com/react-image-crop/dist/ReactCrop.min.js"></script>
         </body>
       </html>
     );

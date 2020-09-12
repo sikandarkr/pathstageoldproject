@@ -6,8 +6,8 @@ const postController = require("../controllers/postController");
 const router = express.Router();
 
 /* Error handler for async / await functions */
-const catchErrors = fn => {
-  return function(req, res, next) {
+const catchErrors = (fn) => {
+  return function (req, res, next) {
     return fn(req, res, next).catch(next);
   };
 };
@@ -21,6 +21,15 @@ router.post(
   catchErrors(authController.signup)
 );
 router.post("/api/auth/signin", authController.signin);
+router.post(
+  "/api/posts/upload",
+  authController.checkAuth,
+  authController.upload
+);
+// router.post("/api/posts/upload", (req,res)=>{
+//   console.log("hiiiiiii...");
+// });
+
 router.get("/api/auth/signout", authController.signout);
 
 /**
@@ -100,6 +109,7 @@ router.post(
   catchErrors(postController.resizeImage),
   catchErrors(postController.addPost)
 );
+
 router.get("/api/posts/by/:userId", catchErrors(postController.getPostsByUser));
 router.get("/api/posts/feed/:userId", catchErrors(postController.getPostFeed));
 

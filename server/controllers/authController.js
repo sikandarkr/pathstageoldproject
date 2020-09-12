@@ -14,10 +14,7 @@ exports.validateSignup = (req, res, next) => {
     .isLength({ min: 4, max: 10 });
 
   // Email is non-null, valid, and normalized
-  req
-    .checkBody("email", "Enter a valid email")
-    .isEmail()
-    .normalizeEmail();
+  req.checkBody("email", "Enter a valid email").isEmail().normalizeEmail();
 
   // Password must be non-null, between 4 and 10 characters
   req.checkBody("password", "Enter a password").notEmpty();
@@ -27,7 +24,7 @@ exports.validateSignup = (req, res, next) => {
 
   const errors = req.validationErrors();
   if (errors) {
-    const firstError = errors.map(error => error.msg)[0];
+    const firstError = errors.map((error) => error.msg)[0];
     return res.status(400).send(firstError);
   }
   next();
@@ -54,7 +51,7 @@ exports.signin = (req, res, next) => {
       return res.status(400).json(info.message);
     }
 
-    req.logIn(user, err => {
+    req.logIn(user, (err) => {
       if (err) {
         return res.status(500).json(err.message);
       }
@@ -75,4 +72,15 @@ exports.checkAuth = (req, res, next) => {
     return next();
   }
   res.redirect("/signin");
+};
+
+exports.upload = (req, res, next) => {
+  try {
+    if (!req.file) {
+      throw new Error("image is not present");
+    }
+    res.json({ message: "fileeee." });
+  } catch (e) {
+    return res.status(422).json({ message: e.message });
+  }
 };

@@ -20,6 +20,9 @@ const imageUploadOptions = {
 
 exports.uploadImage = multer(imageUploadOptions).single("image");
 
+
+
+
 exports.resizeImage = async (req, res, next) => {
   if (!req.file) {
     return next();

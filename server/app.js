@@ -18,7 +18,7 @@ const routes = require("./routes");
 require("./passport");
 
 const dev = process.env.NODE_ENV !== "production";
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 const ROOT_URL = dev ? `http://localhost:${port}` : process.env.PRODUCTION_URL;
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -29,33 +29,26 @@ const mongooseOptions = {
   useFindAndModify: false
 };
 
-mongoose
-  .connect(
-    process.env.DATABASE,
-    mongooseOptions
-  )
-  .then(() => console.log("DB connected"));
-
-mongoose.connection.on("error", err => {
-  console.log(`DB connection error: ${err.message}`);
-});
+let dev_db_url =  process.env.DATABASE;
+const mongoDB = dev_db_url;
+let success = mongoose.connect(mongoDB);
+if (success) {
+  console.log("connected successfully");
+} else {
+  console.log("error while connecting");
+}
 
 app.prepare().then(() => {
   const server = express();
-
   if (!dev) {
-    /* Helmet helps secure our app by setting various HTTP headers */
     server.use(helmet());
-    /* Compression gives us gzip compression */
     server.use(compression());
   }
 
-  /* Body Parser built-in to Express as of version 4.16 */
   server.use(express.json());
-  /* Express Validator will validate form data sent to the backend */
+  
   server.use(expressValidator());
 
-  /* give all Next.js's requests to Next.js server */
   server.get("/_next/*", (req, res) => {
     handle(req, res);
   });
